@@ -15,7 +15,33 @@ def precision_recall(ious, gt_classes, pred_classes):
     - precision [float]
     - recall [float]
     """
-    # IMPLEMENT THIS FUNCTION
+    # Set IOU Threshold
+    threshold = 0.5
+    # Compare each element with the threshold and assign scores
+    result = ious > threshold
+
+    # Use np.where to get the indices of elements that are True
+    indices = np.where(result)
+    
+    # Step 5: Convert the indices to a list of tuples for easier iteration
+    indices_list = list(zip(indices[0], indices[1]))
+    TP = 0
+    FP = 0
+
+    # Step 6: Loop through the indices and perform desired operations
+    for idx in indices_list:
+        row, col = idx
+        # If the classes of GT are the same as the classes of Prediction, then TP + 1
+        if (gt_classes[row] == pred_classes[col]):
+            TP += 1
+        # If different, then FP + 1
+        else:
+            FP += 1
+
+    FN = len(gt_classes) - len(indices[0])
+
+    precision = TP / (TP + FP)
+    recall = TP / (TP + FN)
     return precision, recall
 
 
@@ -35,3 +61,5 @@ if __name__ == "__main__":
     
     ious = calculate_ious(gt_bboxes, pred_boxes)
     precision, recall = precision_recall(ious, gt_classes, pred_classes)
+    print(precision)
+    print(recall)
