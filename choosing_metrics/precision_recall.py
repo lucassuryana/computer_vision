@@ -38,6 +38,7 @@ def precision_recall(ious, gt_classes, pred_classes):
         else:
             FP += 1
 
+    # FN is the total number of ground truth that an algorithm fails to detect
     FN = len(gt_classes) - len(indices[0])
 
     precision = TP / (TP + FP)
