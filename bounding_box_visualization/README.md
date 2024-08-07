@@ -24,15 +24,15 @@ this exercise though.
 # How to run
 1. Clone the computer_vision repository to your local machine by running this command in your terminal:
 ```sh
-{git clone <repository_url>}
+git clone <repository_url>
 ```
 2. Change directory to bounding_box_visualization:
 ```sh 
-{cd bounding_box_visualization}
+cd bounding_box_visualization
 ```
 3. Run the visualization code 
 ```sh 
-{python visualization.py}
+python visualization.py
 ```
 
 ## Expected results
