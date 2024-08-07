@@ -59,6 +59,7 @@ def viz(ground_truth):
                 axs[x,y].add_patch(rect)
             axs[x ,y].axis('off')  
     plt.tight_layout()
+    # plt.savefig('expected_result.png')
     plt.show()
 
 if __name__ == "__main__":

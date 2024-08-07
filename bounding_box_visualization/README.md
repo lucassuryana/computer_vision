@@ -1,31 +1,37 @@
-# Exercise 2 - Visualization
+# Bounding Box Visualization
 
 ## Objective
 
-For this exercise, you need to implement a function to visualize the ground truth boxes
-on a set of images in `visualization.py`. You need to display color coded bounding boxes using the class id associated
-with each bounding box. You need to display all the data in a single figure.
-You should aim for visibility as clear data visualization is critical to communicate a message.
-
-![](example.png)
-
-**Note:** Any visualized code will only pop up through the workspace desktop - if you complete work in the primary workspace window, you'll need to click the "Desktop" button in the bottom right to view visualizations.
+This repository contains code to visualize the ground truth boxes on top of images captured from a vehicle's dashboard. The bounding boxes are color-coded to represent their associated class IDs.
 
 ## Details
 
-The labels (bounding boxes and classes) are located is the `data/ground_truth.json` file. It contains 20 observations, each observation is a dict
-with the following fields.
+The labels (bounding boxes and classes) are located in the `data/ground_truth.json` file. It contains 20 observations, each represented as a dictionary with the following fields:
 
-```
-{filename: str, boxes: List[List[int]], classes: List[int]}
-```
-The bounding boxes are using the `[x1, y1, x2, y2]` format. Images (png files) are located in the `data/images` folder. Each image is associated can be matched with its labels with the filename. 
+```python
+{
+  "filename": str,
+  "boxes": List[List[int]],
+  "classes": List[int]
+}
 
-The `utils.py` file contains an help function `get_data` that you can import to load the ground truth and the predictions. You will only need the ground truth for 
+The bounding boxes use the '[y1, x1, y2, x2]' format. Images (PNG files) are located in the 'data/images' folder. Each image is associated can be matched with its labels with the filename. 
+
+The 'utils.py' file contains an help function 'get_data' that you can import to load the ground truth and the predictions. You will only need the ground truth for 
 this exercise though. 
 
-## Tips
-You can use matplotlib patches to create the bounding boxes visualizations. You can improve over the above visualization by adding the classes name by the bounding boxes. 
+# How to run
+1. Clone the computer_vision repository to your local machine by running this command in your terminal:
+```sh
+{git clone <repository_url>}
+2. Change directory to bounding_box_visualization:
+```sh 
+{cd bounding_box_visualization}
+3. Run the visualization code 
+```sh 
+{python visualization.py}
 
-## Take it further
-Think about the way you could display both ground truths and predictions on the same image in a clear fashion.
+## Expected results
+
+If you run the code correctly, you should see the following result:
+![](expected_result.png)
