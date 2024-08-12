@@ -14,3 +14,16 @@ cd tffrecord_3
 python convert.py -p training_segment-1005081002024129653_5313_150_5333_150_with_camera_labels.tfrecord
 ```
 The script will output a new TFRecord file in the `output` folder, where the data has been translated into the TensorFlow Object Detection API format.
+
+``` plaintext
+ann box {
+  center_x: 785.69796
+  center_y: 681.48561
+  width: 33.47427000000005
+  length: 25.263599999999997
+}
+type: TYPE_VEHICLE
+id: "7c79b738-419e-4ebf-acae-e8d26a102eaa"
+detection_difficulty_level: LEVEL_2
+tracking_difficulty_level: LEVEL_2
+```
