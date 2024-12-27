@@ -15,6 +15,19 @@ def sgd(params, grads, lr, bs):
     - lr [float]: Learning rate
     - bs [int]: Batch size
     """
+    # param refers to the model parameters [W,b] and grad refers to the gradients.
+    # W is the weight matrix and b is the bias vector
+    # the parameters can be seen in the following equation:
+    # y_hat = softmax(X @ W + b).
+    # param.assign_sub is a method that subtracts the value of the tensor passed
+    # as an argument from the tensor it is called on.
+    # the value of the tensor passed as an argument is the learning rate
+    # multiplied by the gradient of the model parameter divided by the batch size
+    # for example:
+    # W.assign_sub(lr * grad / bs).
+    # In SGD equation, W = W - lr * grad / bs
+    # this is the update rule for the weight matrix W
+    # the same update rule applies to the bias vector b
     for param, grad in zip(params, grads):
         param.assign_sub(lr * grad / bs)
 
@@ -33,11 +46,16 @@ def training_loop(lr):
     for X, Y in train_dataset:
         with tf.GradientTape() as tape:
             # Forward pass
+            # X is divided by 255 to normalize the pixel values
             X = X / 255.0
             y_hat = model(X)
 
             # Calculate loss
+            # tf.one_hot is used to convert the ground truth labels Y to one-hot encoding
+            # for example, if Y = 2, then one_hot = [0, 0, 1, 0, 0, ..., 0]
             one_hot = tf.one_hot(Y, 43)
+            # cross_entropy is the loss function used to calculate the difference between
+            # the predicted values y_hat and the ground truth labels one_hot
             loss = cross_entropy(y_hat, one_hot)
             losses.append(tf.reduce_mean(loss))
 
