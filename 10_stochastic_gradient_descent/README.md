@@ -15,7 +15,7 @@ The input to your model should be normalized. You can do this by dividing them b
 
 You can run `python training.py` to train your first machine learning model!
 
-You will need to specify the `--imdir`, e.g. `--imdir GTSRB/Final_Training/Images/`, using the provided GTSRB dataset.
+You will need to specify the `--imdir`, e.g. `--imdir ../GTSRB/Final_Training/Images/`, using the provided GTSRB dataset.
 
 ## Tips 
  

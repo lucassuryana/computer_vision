@@ -13,7 +13,7 @@ Keras codebase make it beginner friendly.
 
 The neural network you create should have less than 4 layers, including the output layer. This last layer should not be activated. Take the time to experiment with different architecture (number of layers, number of neurons) and see how it impacts the results.
 
-You will need to specify the `--imdir`, e.g. `--imdir GTSRB/Final_Training/Images/`, using the provided GTSRB dataset.
+You will need to specify the `--imdir`, e.g. `--imdir ../GTSRB/Final_Training/Images/`, using the provided GTSRB dataset.
 
 Lastly, at the end of training, you will need to be in the `Desktop` view to see the metrics visualization.
 
