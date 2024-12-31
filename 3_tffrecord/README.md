@@ -31,7 +31,10 @@ id: "7c79b738-419e-4ebf-acae-e8d26a102eaa"
 detection_difficulty_level: LEVEL_2
 tracking_difficulty_level: LEVEL_2
 ```
-
+Figure below gives an illustration of the output of the script.
+![img.png](img.png)
+Figure below gives an illustration of where tffrecord_3 is located in the project.
+![img_1.png](img_1.png)
 ### Converted TFRecord for TensorFlow Object Detection API
 After processing, the same annotation would be converted into the TensorFlow Object Detection API format as follows:
 ``` python
